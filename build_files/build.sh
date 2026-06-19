@@ -14,6 +14,14 @@ cp -avf "/ctx/system_files"/. /
 
 # this installs a package from fedora repos
 dnf5 install -y tmux
+dnf5 install -y alacritty
+
+# Enable the Terra repository so we can pull MangoWM
+dnf5 install -y --nogpgcheck https://terra.fyralabs.com/terra-repo-latest.noarch.rpm
+
+# Install MangoWM, Noctalia, and the VM integration modules you requested
+dnf5 install -y mangowm noctalia qemu-guest-agent spice-vdagent && \
+    dnf clean all
 
 # Use a COPR Example:
 #
@@ -25,3 +33,6 @@ dnf5 install -y tmux
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+# Enable VM guest services so they run automatically on boot
+systemctl enable qemu-guest-agent.service

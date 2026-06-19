@@ -17,7 +17,7 @@ dnf5 install -y tmux
 dnf5 install -y alacritty
 
 # Enable the Terra repository so we can pull MangoWM
-dnf5 install -y --nogpgcheck https://terra.fyralabs.com/terra-repo-latest.noarch.rpm
+dnf5 install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 
 # Install MangoWM, Noctalia, and the VM integration modules you requested
 dnf5 install -y mangowm noctalia qemu-guest-agent spice-vdagent && \

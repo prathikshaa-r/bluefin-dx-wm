@@ -14,7 +14,7 @@ cp -avf "/ctx/system_files"/. /
 
 # this installs a package from fedora repos
 dnf5 install -y alacritty kitty
-dnf5 install -y wev system-config-printer nm-tui
+dnf5 install -y wev system-config-printer
 
 # Enable the Terra repository so we can pull MangoWM
 dnf5 install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release

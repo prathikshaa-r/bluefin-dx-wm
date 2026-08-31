@@ -17,9 +17,9 @@ dnf5 install -y alacritty kitty
 dnf5 install -y wev system-config-printer
 
 # Install Fedora Sway Spin
-sudo dnf install sway
-sudo dnf group install sway-desktop-environment
-sudo dnf install sway-config-fedora
+dnf5 install -y sway
+dnf5 group install -y sway-desktop-environment
+dnf5 install -y sway-config-fedora
 
 # Install MangoWM, Noctalia, and the VM integration modules
 # Enable the Terra repository so we can pull MangoWM

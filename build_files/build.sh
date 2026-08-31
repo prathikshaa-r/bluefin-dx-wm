@@ -1,4 +1,4 @@
-#!/bin/bash
+xs#!/bin/bash
 
 set -ouex pipefail
 
@@ -16,10 +16,14 @@ cp -avf "/ctx/system_files"/. /
 dnf5 install -y alacritty kitty
 dnf5 install -y wev system-config-printer
 
+# Install Fedora Sway Spin
+sudo dnf install sway
+sudo dnf group install sway-desktop-environment
+sudo dnf install sway-config-fedora
+
+# Install MangoWM, Noctalia, and the VM integration modules
 # Enable the Terra repository so we can pull MangoWM
 dnf5 install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-
-# Install MangoWM, Noctalia, and the VM integration modules you requested
 dnf5 install -y mangowm noctalia qemu-guest-agent spice-vdagent && \
     dnf clean all
 

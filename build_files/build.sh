@@ -20,7 +20,7 @@ dnf5 install -y wev system-config-printer
 # dnf5 install -y sway
 # dnf5 install -y sway-config-fedora
 dnf5 group install -y sway-desktop-environment
-dnf5 group install -y cosmic-desktop-environmemnt
+dnf5 group install -y cosmic-desktop-environment
 
 # Install MangoWM, Noctalia, and the VM integration modules
 # Enable the Terra repository so we can pull MangoWM
